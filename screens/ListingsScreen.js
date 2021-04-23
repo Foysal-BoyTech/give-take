@@ -21,7 +21,7 @@ const listings = [
   {
     id: 3,
     title: 'a jacket',
-    description: 'Few months used still in nice condition',
+    description: 'still in nice condition',
     image: require('../assets/helping.jpg'),
   },
   {
