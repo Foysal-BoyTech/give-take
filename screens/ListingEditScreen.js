@@ -11,7 +11,7 @@ import Screen from '../components/Screen';
 const validationSchema = Yup.object().shape({
   title: Yup.string().label('Title'),
   description: Yup.string().label('Description'),
-  image: Yup.array().min(1).label('Images'),
+  images: Yup.array().min(1, 'Please select at least one image.'),
 });
 
 function ListingEditScreen() {
@@ -21,7 +21,7 @@ function ListingEditScreen() {
         initialValues={{
           title: '',
           description: '',
-          image: [],
+          images: [],
         }}
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
