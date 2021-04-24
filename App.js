@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { View } from 'react-native';
+import FormImagePicker from './components/forms/FormImagePicker';
+import ListingEditScreen from './screens/ListingEditScreen';
 
-import Screen from './components/Screen';
-import ImageInputList from './components/ImageInputList';
+// import Screen from './components/Screen';
+// import ImageInputList from './components/ImageInputList';
 import LoginScreen from './screens/LoginScreen';
-import AppTextInput from './components/AppTextInput';
 
 export default function App() {
   // const [imageUris, setImageUris] = useState([]);
@@ -26,5 +28,5 @@ export default function App() {
   //   </Screen>
   // );
 
-  return <LoginScreen />;
+  return <ListingEditScreen />;
 }
