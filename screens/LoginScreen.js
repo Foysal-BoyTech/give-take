@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Image } from 'react-native';
 import * as Yup from 'yup';
 
+import ApiService from '../apiService/apiService';
 import Screen from '../components/Screen';
 import AppFormField from '../components/forms/AppFormField';
 import SubmitButton from '../components/forms/SubmitButton';
@@ -12,14 +13,17 @@ const validationSchema = Yup.object().shape({
   password: Yup.string().required().min(4).label('Password'),
 });
 
-function LoginScreen() {
+function LoginScreen({ navigation }) {
+  const handler = (email) => {
+    ApiService.checkUser(email);
+  };
   return (
     <Screen style={styles.container}>
       <Image style={styles.logo} source={require('../assets/logo.jpg')} />
 
       <AppForm
         initialValues={{ email: '', password: '' }}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={(values) => handler(values)}
         validationSchema={validationSchema}
       >
         <AppFormField

@@ -44,7 +44,7 @@ function ListingsScreen({ navigation }) {
             title={item.title}
             subTitle={item.description}
             image={item.image}
-            onPress={() => navigation.navigate(routes.LISTING_DETAILS)}
+            onPress={() => navigation.navigate('ListingDetails', item)}
           />
         )}
       />
