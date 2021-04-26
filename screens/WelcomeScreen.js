@@ -16,14 +16,11 @@ function WelcomeScreen({ navigation }) {
         <Text style={styles.tagline}>Give&Get</Text>
       </View>
       <View style={styles.buttonsContainer}>
-        <Button
-          title="Login"
-          onPress={() => navigation.navigate('LoginScreen')}
-        />
+        <Button title="Login" onPress={() => navigation.navigate('Login')} />
         <Button
           title="Register"
           color="secondary"
-          onPress={() => navigation.navigate('RegisterScreen')}
+          onPress={() => navigation.navigate('Register')}
         />
       </View>
     </ImageBackground>

@@ -13,7 +13,7 @@ const Tab = createBottomTabNavigator();
 const AppNavigator = () => (
   <Tab.Navigator>
     <Tab.Screen
-      name="Feed"
+      name="Home"
       component={FeedNavigator}
       options={{
         tabBarIcon: ({ color, size }) => (
@@ -27,7 +27,7 @@ const AppNavigator = () => (
       options={({ navigation }) => ({
         tabBarButton: () => (
           <NewListingButton
-            onPress={() => navigation.navigate(routes.LISTING_EDIT)}
+            onPress={() => navigation.navigate('ListingEdit')}
           />
         ),
         tabBarIcon: ({ color, size }) => (

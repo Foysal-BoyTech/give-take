@@ -2,8 +2,8 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 
 import navigationTheme from './navigation/navigationTheme';
+import AuthNavigator from './navigation/AuthNavigator';
 import AppNavigator from './navigation/AppNavigator';
-import WelcomeScreen from './screens/WelcomeScreen';
 
 export default function App() {
   return (

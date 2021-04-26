@@ -5,17 +5,19 @@ import AppText from '../components/AppText';
 import colors from '../config/colors';
 import ListItem from '../components/lists/ListItem';
 
-function ListingDetailsScreen() {
+function ListingDetailsScreen({ route }) {
+  const listing = route.params;
   return (
     <View>
-      <Image style={styles.image} source={require('../assets/icon.png')} />
+      <Image style={styles.image} source={listing.image} />
       <View style={styles.detailsContainer}>
-        <AppText style={styles.title}>Red jacket </AppText>
-        <AppText style={styles.details}>In good condition</AppText>
+        <AppText style={styles.title}>{listing.title} </AppText>
+        <AppText style={styles.details}>{listing.details}</AppText>
         <View style={styles.userContainer}>
           <ListItem
             image={require('../assets/foysal.jpg')}
             title="foysal Mohammad"
+            subTitle="An old table to give"
           />
         </View>
       </View>
