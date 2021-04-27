@@ -7,14 +7,17 @@ import WelcomeScreen from '../screens/WelcomeScreen';
 
 const Stack = createStackNavigator();
 
-const AuthNavigator = () => (
+const AuthNavigator = ({ setUser }) => (
   <Stack.Navigator>
     <Stack.Screen
       name="Welcome"
       component={WelcomeScreen}
       options={{ headerShown: false }}
     />
-    <Stack.Screen name="Login" component={LoginScreen} />
+    <Stack.Screen name="Login">
+      {(props) => <LoginScreen setUser={setUser} {...props} />}
+    </Stack.Screen>
+
     <Stack.Screen name="Register" component={RegisterScreen} />
   </Stack.Navigator>
 );

@@ -13,9 +13,13 @@ const validationSchema = Yup.object().shape({
   password: Yup.string().required().min(4).label('Password'),
 });
 
-function LoginScreen({ navigation }) {
-  const handler = (email) => {
-    ApiService.checkUser(email);
+function LoginScreen({ setUser }) {
+  const handler = async (email) => {
+    const user = await ApiService.checkUser(email);
+
+    if (user) {
+      setUser(user);
+    }
   };
   return (
     <Screen style={styles.container}>

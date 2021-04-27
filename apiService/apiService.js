@@ -1,7 +1,16 @@
 const BASE_URL = 'http://192.168.1.224:9000';
 
-function checkUser() {
-  return fetchRequest('/user');
+function checkUser(email) {
+  return fetch(`${BASE_URL}/user`, {
+    method: 'POST',
+    body: JSON.stringify(email),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((data) => data.json())
+    .then((user) => user)
+    .catch((err) => console.log(err));
 }
 
 export const createUser = (body) => {

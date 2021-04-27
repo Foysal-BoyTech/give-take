@@ -2,29 +2,19 @@ const Auth = require('../models/auth');
 
 exports.getOne = async (req, res) => {
   try {
-    const email = req.params.email;
-    const foundUser = await Auth.find({ email });
+    const email = req.body.email;
+    const foundUser = await Auth.findOne({ email });
     if (foundUser) {
-      req.status(200);
-      req.body = foundUser;
+      res.status(200);
+      res.send(foundUser);
     } else {
-      req.status(502);
+      res.status(502);
     }
   } catch (error) {
     console.log(error);
-    req.status(500);
+    res.status(500);
   }
 };
-// exports.getAuth = async (req, res) => {
-//   try {
-//     const auths = await Auth.find();
-//     res.send(auths);
-//   } catch (error) {
-//     console.error('GET AUTHS', error);
-//     res.status(500);
-//     res.send(error);
-//   }
-// };
 
 exports.register = async (req, res) => {
   try {
