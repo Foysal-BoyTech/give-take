@@ -12,6 +12,6 @@ Download Expo Go app in your mobile, 🍎 On your iPhone or iPad, open the defau
 
 # Tech stack
 
-Front End: React-Native with Expo, Material Icons, @react-native/hooks, React formik, and Reac YUP.
+Front End: React-Native with Expo, Material Icons, @react-native/hooks, React formik, and React YUP.
 
 Back End: Express, Mongodb with mongoos.
